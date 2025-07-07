@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C3 Engenharia - Tecnologia e Inovação</title>
+<style>
+    /* Tipografia e Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f9fafc;
+      color: #222;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 20px;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #003366, #00509e);
+      color: #fff;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 10px;
+    }
+
+    header .slogan {
+      font-size: 1.1rem;
+      color: #cbe5ff;
+    }
+
+    nav {
+      margin-top: 20px;
+      background: #022a55;
+      padding: 12px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    nav a {
+      color: #cce3ff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffce00;
+    }
+
+    /* SECTION */
+    section {
+      margin: 50px 0;
+      padding-bottom: 25px;
+      border-bottom: 2px solid #e0e4e8;
+    }
+
+    section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.3rem);
+      color: #003366;
+      border-bottom: 4px solid #0077cc;
+      display: inline-block;
+      margin-bottom: 20px;
+      padding-bottom: 6px;
+    }
+
+    /* Sobre */
+    #sobre p,
+    #projetos ul,
+    #estrategia ul,
+    #estrategia p {
+      max-width: 950px;
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    #sobre ul {
+      padding-left: 20px;
+      list-style: disc;
+    }
+
+    /* Projetos */
+    #projetos li {
+      position: relative;
+      margin-left: 15px;
+      margin-bottom: 16px;
+    }
+
+    #projetos li::before {
+      content: "▹";
+      position: absolute;
+      left: -15px;
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+    #projetos strong {
+      color: #003366;
+    }
+
+    /* Estratégia */
+    .valores-list,
+    .parceiros-list {
+      list-style-type: disc;
+      margin-left: 25px;
+      color: #444;
+    }
+
+    /* Time */
+    #time .membro {
+      border: 1px solid #dbe2e8;
+      border-radius: 10px;
+      background: #fff;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    #time h3 {
+      color: #003366;
+      margin-bottom: 8px;
+    }
+
+    #time .cargo {
+      font-weight: 700;
+      color: #0077cc;
+      margin-bottom: 6px;
+    }
+
+    #time p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Newsletter */
+    #newsletter {
+      background: #003366;
+      color: white;
+      padding: 40px 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    #newsletter h2 {
+      border: none;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    #newsletter input[type="email"] {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      width: 280px;
+      max-width: 90%;
+      margin-bottom: 10px;
+    }
+
+    #newsletter button {
+      background: #ffce00;
+      color: #003366;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    #newsletter button:hover {
+      background: #e6b800;
+    }
+
+    /* Contato */
+    #contato strong {
+      color: #003366;
+    }
+
+    /* Footer */
+    footer {
+      background: #001f3f;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #99ccff;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      nav {
+        gap: 15px;
+      }
+
+      #newsletter input[type="email"],
+      #newsletter button {
+        width: 100%;
+      }
+
+      .membro {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>C3 Engenharia</h1>
+  <p class="slogan">Transformamos o mundo com inovação para uma vida melhor</p>
+  <p class="slogan">Desenvolvemos tecnologias para tornar a vida mais simples</p>
+  <p class="slogan">Desenvolvemos projetos de energia fotovoltaica</p>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#estrategia">Estratégia</a>
+    <a href="#time">Nosso Time</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section id="sobre" aria-label="Sobre a empresa">
+    <h2>Conheça a C3 Engenharia</h2>
+    <p>
+      Fundada em 1991, a C3 Engenharia atua nas áreas de engenharia eletrônica, telecomunicações, tecnologia da informação, automação, robótica, energias renováveis e treinamento.
+      Nosso objetivo é desenvolver tecnologias e soluções para tornar a vida melhor e mais produtiva.
+    </p>
+    <p>
+      Somos especializados em soluções tecnológicas para diversas áreas, tais como:
+    </p>
+    <ul>
+      <li>Engenharia de Software/Sistemas</li>
+      <li>Telecomunicações</li>
+      <li>Infraestrutura Elétrica</li>
+      <li>Energia Renovável Fotovoltaica</li>
+      <li>Apoio Logístico</li>
+      <li>Gestão de Projetos</li>
+      <li>Tecnologias Disruptivas</li>
+      <li>Treinamentos</li>
+    </ul>
+  </section>
+
+  <section id="projetos" aria-label="Projetos e Atuação">
+    <h2>Projetos e Atuação</h2>
+    <ul>
+      <li><strong>Engenharia de Software/Sistemas:</strong> Projeto, desenvolvimento, documentação e manutenção do software/sistema de previsões ionosféricas de radiopropagação HF da Marinha do Brasil.</li>
+      <li><strong>Redes, Telecomunicações e Dados:</strong> Elaboração do Plano de Apoio Logístico Integrado e do Sistema de Manutenção Planejada (SMP) para Corveta Barroso.</li>
+      <li><strong>Infraestrutura Elétrica:</strong> Serviços de instalação elétrica e respectivos painéis de controle para rampa de gás natural em indústrias cerâmicas no município de Campos de Goytacazes.</li>
+      <li><strong>Energia Renovável Fotovoltaica:</strong> Projeto, instalação e manutenção de sistema fotovoltaico On Grid em parceria com a Solarcorp.</li>
+      <li><strong>Apoio Logístico:</strong> Plano de Apoio Logístico Integrado e Sistema de Manutenção Planejada para a Corveta Barroso – Marinha do Brasil.</li>
+      <li><strong>Tecnologias Disruptivas:</strong> Coordenação de palestras sobre IoT, Inteligência Artificial, Smart Cities, Segurança Cibernética, entre outras.</li>
+      <li><strong>Gestão de Projetos:</strong> Gestão de engenharia para revitalização de prédio comercial com foco em sustentabilidade e eficiência energética.</li>
+    </ul>
+  </section>
+
+  <section id="estrategia" aria-label="Estratégia empresarial">
+    <h2>Estratégia Empresarial</h2>
+    <h3>Missão</h3>
+    <p>Levar ao mercado produtos e serviços em projetos de suas áreas de atuação em todo seu ciclo de vida: planejamento, especificação, desenvolvimento, implantação, treinamento e apoio logístico integrado.</p>
+    <h3>Visão</h3>
+    <p>Ser uma empresa reconhecida pela excelência na qualidade de serviços prestados e produtos entregues ao mercado.</p>
+    <h3>Valores</h3>
+    <ul class="valores-list">
+      <li>Responsabilidade social e ambiental</li>
+      <li>Ética profissional</li>
+      <li>Competência</li>
+      <li>Transparência</li>
+    </ul>
+
+    <h3>Plano Estratégico</h3>
+    <ul class="valores-list">
+      <li>Atuar em projetos inovadores para a indústria 4.0;</li>
+      <li>Estabelecer parcerias no modelo tríplice hélice de inovação (Empresa / Universidade / Governo);</li>
+      <li>Prestar serviços e desenvolver produtos tecnológicos de alto valor agregado;</li>
+      <li>Executar treinamento para ambiente corporativo, com foco em tecnologias inovadoras;</li>
+      <li>Fortalecer sua marca, através de mídias digitais.</li>
+    </ul>
+
+    <h3>Conheça Nossos Parceiros</h3>
+    <ul class="parceiros-list">
+      <li>Universidade do Estado do Rio de Janeiro (UERJ) - Convênio INOVUERJ 2020/C3</li>
+      <li>VIDEN Engenharia - <a href="http://www.viden.net.br" target="_blank" rel="noopener noreferrer">www.viden.net.br</a></li>
+      <li>Synchronet Telecomunicações</li>
+    </ul>
+  </section>
+
+  <section id="time" aria-label="Equipe e Currículo">
+    <h2>Nossos Talentos Humanos</h2>
+
+    <div class="membro" id="joel">
+      <h3>Joel Martins de Medeiros</h3>
+      <p class="cargo">Diretor Geral</p>
+      <p>Engenheiro de Telecomunicações e Eletrônica pela PUC/RJ; Mestre em Sistemas Computacionais - PUC/RJ; Capitão-de-Mar-e-Guerra da Marinha do Brasil – Corpo de Engenheiros-Ref; Professor aposentado da Universidade do Estado do Rio de Janeiro; Coordenador do Grupo CTEMI do Clube Naval; Sócio-fundador da C3 Engenharia.</p>
+    </div>
+
+    <div class="membro" id="paulo">
+      <h3>Paulo Roberto Meirelles de Medeiros</h3>
+      <p class="cargo">Diretor Técnico</p>
+      <p>Graduado em Engenharia Elétrica pela PUC/RJ (1998); Experiência em telecomunicações nas redes 2G, 3G e 4G; Trabalhou na TELERJ (atual VIVO), ATL, CLARO, TIM e Huawei do Brasil; Diretor Técnico da C3 Engenharia desde 2016; Participa do Grupo CTEMI em áreas como Inteligência Artificial, Segurança Cibernética, Energia Fotovoltaica e Smart Cities.</p>
+    </div>
+
+    <div class="membro" id="fabio">
+      <h3>Fábio Bittencourt Quirino</h3>
+      <p class="cargo">Consultor</p>
+      <p>Engenheiro Eletrônico pela Universidade Gama Filho; Especialista em Redes Locais de Computadores e Webdesign; Auditor de Segurança da Informação da Marinha; Professor convidado em MBAs; Assessor de TI do Clube Naval.</p>
+    </div>
+
+    <div class="membro" id="lourival">
+      <h3>Lourival José Passos Moreira</h3>
+      <p class="cargo">Consultor</p>
+      <p>Professor Titular aposentado da Escola Naval; Graduação em Engenharia Eletrônica pela UFRJ; Especialização em Docência; Mestrado em Educação e Cultura; Doutorado em Políticas e Estratégias; Pesquisador em Instrumentação e Segurança Cibernética; Coordenador Executivo do Grupo IoTbr.</p>
+    </div>
+
+    <div class="membro" id="luis">
+      <h3>Luis Claudio Meirelles de Medeiros</h3>
+      <p class="cargo">Consultor</p>
+      <p>Doutorando em Meio Ambiente na UERJ; Mestre em Administração pela FGV; Pós-graduado em Engenharia Econômica; Professor Assistente da UFRRJ; Consultor e ex-gerente financeiro em telecomunicações; Atua em pesquisa ambiental e gestão.</p>
+    </div>
+
+    <div class="membro" id="roberto">
+      <h3>Roberto Luiz Brown do Rego Macedo</h3>
+      <p class="cargo">Consultor</p>
+      <p>Engenheiro eletrônico e mestre pela PUC/RJ; Doutorado em Políticas e Estratégias; Capitão-de-Mar-e-Guerra da Marinha (Reformado); Experiência em gestão técnica e consultoria em sistemas e radares para a Marinha e indústria de defesa; Professor universitário.</p>
+    </div>
+  </section>
+
+  <section id="newsletter" aria-label="Inscrição Newsletter">
+    <h2>Inscreva-se em nossa Newsletter para receber novidades</h2>
+    <form action="#" method="POST" onsubmit="alert('Obrigado pela inscrição!'); return false;">
+      <input type="email" name="email" placeholder="Digite seu e-mail" required />
+      <button type="submit">Inscrever-se</button>
+    </form>
+  </section>
+
+  <section id="contato" aria-label="Informações de contato">
+    <h2>Informações da Empresa e Contato</h2>
+    <p><strong>Telefone:</strong> (21) 2544-5009</p>
+    <p><strong>E-mail:</strong> <a href="mailto:contato@c3.com.br">contato@c3.com.br</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 1991 - C3 Engenharia. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
